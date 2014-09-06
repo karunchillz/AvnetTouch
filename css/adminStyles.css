@@ -1,0 +1,297 @@
+html, body{
+	margin:0;
+	padding:0;
+	overflow:hidden;
+	font-family: wf_SegoeUILight, wf_SegoeUI, 'Segoe UI Light', 'Segoe WP Light', 'Segoe UI', Segoe, 'Segoe WP', Tahoma, Verdana, Arial, sans-serif;
+}
+header, .sideMenu{
+	background: #333;
+}
+header{
+	width:100%;
+	padding:2px 10px;
+	color: #fff;
+	position: relative;
+}
+h1{
+	font-size: 32px;
+	font-weight: 300;
+	margin:0;
+}
+section{
+	position:relative;
+}
+a{
+	cursor:pointer;
+}
+.sideMenu{
+	height:1000px;
+	width:250px;
+	display:inline-block;
+}
+.content{
+	position:absolute;
+	left:275px;
+	right:25px;
+	top:20px;
+	height:500px;
+}
+ul{
+	margin:0;
+	padding:0;
+	list-style-type:none;
+}
+.sideMenu ul li{
+	color:#fff;
+	padding:10px;
+	border-top: 1px solid #fff;
+	cursor:pointer;
+}
+.sideMenu ul li:last-child{
+	border-bottom: 1px solid #fff;
+}
+a{
+	text-decoration:none;
+}
+.container{
+	margin-top:20px;
+	height:450px;
+	
+	overflow-y:scroll;
+}
+.styled-file-area{
+	width:50%;
+	position:relative;
+}
+.morphed-area{
+	position:absolute;
+	right:0%;
+	height:30px;
+	width:20%;
+	min-width:70px;
+}
+.styled-file-area input[type='button']{
+	border:0px;
+	background:orange;
+}
+.styled-file-area input[type='file']{
+	opacity:0;
+}
+input[type='text']{
+	width:80%;
+	height:24px;
+}
+
+table.grid{
+	width: 100%;
+	margin-top: 20px;
+}
+th{
+	text-align:left;
+	border-top:1px solid #ebebeb;
+	color: #bdbdb6;
+	font-size:12px;
+}
+tr{
+	height:30px;
+}
+th, td{
+	border-bottom:1px solid #ebebeb;
+}
+.iconBox{
+	width: 3%;
+}
+.titleBox{
+	width: 30%;
+}
+.ownerBox{
+	width: 15%;
+}
+.dateBox{
+	width: 15%;
+}
+.statusBox{
+	width: 30%;
+}
+.heading{
+	color: orange;
+	font-size:22px;
+}
+.container_left{
+	margin-left:30px;
+}
+.container_left input{
+	width:230px;
+	height:30px;
+	display:block;
+	margin-bottom:10px;
+}
+.container_left input[type="button"], .remSection input[type="button"], .projDetails input[type="submit"], .popUp .buttons input[type="button"]{
+	width:150px;
+	height:30px;
+	background: orange;
+	border:0;
+	display:block;
+	margin-bottom:10px;
+	cursor:pointer;
+}
+.remSection input[type="button"].send{
+	width:50px;
+	height:20px;
+	margin:5px;
+}
+.sendAll{
+	position:absolute;
+	right:100px;
+	top:10px;
+}
+.projDetails{
+	margin-top:30px;
+}
+.projDetails input{
+	width:230px;
+	display:block;
+	margin-bottom: 10px;
+}
+.projDetails input[type="checkbox"]{
+	width:20px;
+	display:inline;
+}
+.projList .status{
+	width:100%;
+	height:20px;
+	position: absolute;
+	bottom:3px;
+	right: 3px;
+	color: #fff;
+	text-align:right;
+	cursor:pointer;
+}
+.projList .active{
+	background: lightgreen;
+}
+.projList .inactive{
+	background: lightskyblue;
+}
+.projList .closed{
+	background: #eeeeee;
+}
+.projList{
+	border-bottom:1px solid #ececec;
+	margin-bottom:10px;
+}
+.projBox{
+	width:190px;
+	height:90px;
+	background:orange;
+	margin:5px;
+	display:inline-block;
+	padding:5px;
+	
+	position:relative;
+}
+
+div.loginBlock {
+    margin: 50px auto;
+    width: 300px;
+}
+.loginBlock input {
+    width: 100%;
+    height: 30px;
+    display: block;
+    margin-bottom: 10px;
+	padding-left:5px;
+}
+
+.loginBlock input[type="submit"]{
+    width:100px;
+    background:orange;
+    border:0;
+}
+
+.profile{
+	color: #ffff00;
+	position:absolute;
+	right:30px;
+	padding:15px;
+	top:0px;
+}
+.profile form{
+	display:inline-block;
+}
+.profile input[type="submit"]{
+	background: #333;
+	border:0;
+	color: #fff;
+	padding:0;
+	cursor:pointer;
+}
+
+
+div.msgDiv {
+    width: 80%;
+    height: 20px;
+    text-align: center;
+    color: green;
+    font-weight: 700;
+    background: lightgreen;
+    padding: 5px;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+.status .small{
+	color:#DFDFDF;
+	cursor:pointer;
+	margin:0 5px
+}
+.status.NEW .small:first-child, .status.IN-PROGRESS .small:nth-child(2), .status.VERIFIED .small:nth-child(3), .status.UPLOADED .small:nth-child(4){
+	color:#000;
+	cursor:crosshair;
+}
+
+.delIcon {
+    position: absolute;
+    top: 2px;
+    right: 5px;
+	display:none;
+}
+
+.projBox:hover .delIcon{
+	display:block;
+	cursor:pointer;
+}
+
+.projectName{
+	font-size:20px;
+}
+.projectDate{
+	font-size:14px;
+	font-family:courier;
+}
+.popUp{
+	position:fixed;
+	z-index:999;
+	background:#333;
+	width:500px;
+	height:200px;
+	top:50%;
+	left:50%;
+	margin-left:-250px;
+	margin-top:-100px;
+	padding:10px;
+	color:#fff;
+	display:none;
+}
+.editPopUp{
+	display:block;
+}
+.popUp .buttons{
+	position:absolute;
+	right:10px;
+	bottom:5px;
+}
+.popUp .buttons input[type="button"]{
+	display:inline-block;
+	width:100px;
+}

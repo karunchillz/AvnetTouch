@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Avnet Touch | Wish Lists</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/resp.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/project-styles.css"/>
+	<link rel="stylesheet" href="css/font-awesome.min.css"/>
+	
+	<script src="js/angular.min.js"></script>
+	<script src="js/angular-route.min.js"></script>
+	<script src="js/jquery.js"></script>
+	<script src="controllers/projectController.js"></script>
+    
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!--[if IE 8]>
+    <style type="text/css">
+        input[type="checkbox"], input[type="radio"] {
+            display: inline;
+        }
+        input[type="checkbox"] + label, input[type="radio"] + label{
+            display: inline;
+            background: none;
+        }
+    </style>
+    <![endif]-->
+
+</head>
+
+<body>
+
+<div id="header" class="header">
+    <div class="width titul">
+        <div class="reg inline">
+            <div class="bleft inline login"><a href="http://uouapps.com/funder/projects.html#" id="login-link" class="login-link">Login</a></div>
+            <div class="bleft bright inline login"><a href="http://uouapps.com/funder/projects.html#" id="reg-link" class="login-link">Register</a></div>
+        </div>
+
+        <div class="social inline fright">
+            <ul id="social">
+                <li class="bleft inline">
+                    <ul style="margin-left: 10px">
+                        <li><a href="https://www.facebook.com/" target="_blank" original-title="twitter"><img src="images/social/icon_header_face.png" alt=""></a></li>
+                        <li><a href="https://plus.google.com/" target="_blank" original-title="googleplus"><img src="images/social/icon_header_g.png" alt=""></a></li>
+                        <li><a href="https://twitter.com/" title="facebook" target="_blank"><img src="images/social/icon_header_tw.png" alt=""></a></li>
+                        <li><a href="http://www.linkedin.com/" target="_blank" original-title="linkedin"><img src="images/social/icon_header_in.png" alt=""></a></li>
+                        <li><a href="http://uouapps.com/funder/johndoe@domainname.com" target="_self" original-title="mail"><img src="images/social/icon_header_p.png" alt=""></a></li>
+                        <li><a href="http://uouapps.com/funder/johndoe@domainname.com" target="_self" original-title="mail"><img src="images/social/icon_header_ball.png" alt=""></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+    <div class="navigate">
+        <div class="width">
+            <div class="logo inline">
+				<h1 class="inline fleft">AVNET TOUCH</h1>
+			</div>
+
+            <div class="navigation inline fright">
+                <ul class="nav inline menuleft">
+                    <li><a class="bleft" href="http://uouapps.com/funder/index.html">HOME</a></li>
+                    <li><a class="bleft" href="http://uouapps.com/funder/index.html#id_about">ABOUT</a></li>
+                    <li class="active"><a class="bleft" href="http://uouapps.com/funder/projects.html#id3">PROJECTS</a></li>
+                    <li><a class="bleft" href="http://uouapps.com/funder/index.html#id_cont">CONTACTS</a></li>
+                    <li><a class="bleft last" href="http://uouapps.com/funder/index.html#id_partn">PARTNERS</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div id="header_select">
+            <select id="dynamic_select">
+                <option value="" selected="">Select A Page</option>
+                <option value="index.html#id_about">About</option>
+                <option value="index.html#id3">Projects</option>
+                <option value="index.html#id_reg">Registration</option>
+                <option value="index.html#id_cont">Contacts</option>
+                <option value="index.html#id_partn">Partners</option>
+            </select>
+        </div>
+    </div>
+</div>
+<!-- Actual Content -->
+<div class="line avnetItems" ng-controller="projectControllerMod">
+    <?php 
+    session_start();
+    if($_SESSION['projId'] == 1){?>
+
+    <?php } ?>
+
+	<div class="projSection">
+		<div class="projSectionLeft"></div>
+		
+		<div class="projSectionRight">
+			<div class="projectHeading">{{projectName}}</div>
+			<div class="projRow">
+				<div class="projIcon"></div>
+				<div class="projCount">{{projectWishesCount}}</div>
+				<div class="projCountDesc">total number of wishes</div>
+			</div>
+			<div class="projRow">
+				<div class="projIcon"></div>
+				<div class="projCount">{{projectWishesGrant}}</div>
+				<div class="projCountDesc">pledged to give gifts</div>
+			</div>
+			<div class="projRow">
+				<div class="projIcon"></div>
+				<div class="projCount">{{projectWishesGrantByMe}}</div>
+				<div class="projCountDesc">items you have contributed</div>
+			</div>
+			<div class="projRow">
+				<div class="projIcon"></div>
+				<div class="projCount">{{projectCounter}}</div>
+				<div class="projCountDesc">days to go</div>
+			</div>
+		</div>
+		<div class="clear:both"></div>
+	</div>
+
+	<div class="wishListSection">
+		<div class="itemBlock" ng-repeat="item in wishListItems" ng-mouseover="">
+			<div class="itemPict"><img src="images/wishes/pen.jpg" width="100%" height="100%"/></div>
+			<div class="itemName">
+				<div class="line_1">{{item.name}}</div>
+				<div class="line_2">{{item.qty}}</div>
+				<div class="line_3">{{item.oth}}</div>
+			</div>
+			<div class="contributer contributer{{item.isGrant}}">
+				<span class="smallHeading">Contributed by</span><br/>
+				<span class="contributerName">{{item.contName}}</span>
+			</div>
+            <div ng-show="item.isGrant=='YES'" class="cancelButton" ng-click="cancelItem(item.id)"></div>
+			<div ng-show="item.isGrant!='YES'" class="contributeButton" ng-click="contributeItem(item.id)"></div>
+		</div>
+	</div>
+</div>
+
+<!-- End of Actual Content -->
+<div id="footer">
+    <div class="footer">
+        <div class="row-fluid">
+            <div class="span3">
+                <h3>FUNDER</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vulputate egestas sem, eu cursus ligula ullamcorper non. Curabitur tristique velit eu mauris venenapus</p>
+            </div>
+            <div class="span3 foot">
+                <h4>Recent Tweets</h4>
+                <div class="tmargin20">
+                    <img class="fleft tw" alt="">
+                    <div class="mleft40">
+                        <span>1234 Street </span>
+                        <span>4r6yg 456hv  </span>
+                        <span>Lorem ipus ex vixc ilflf nfnfoof wrfoo rcgetg  erger </span>
+                        <br>
+                        <a class="green">http://www.envato.com</a>
+                    </div>
+                    <div class="clear foot"></div>
+                    <img class="fleft tw" alt="">
+                    <div class=" mleft40">
+                        <span>1234 Street </span>
+                        <span>4r6yg 456hv  </span>
+                        <span>Lorem ipus ex vixc ilflf n </span>
+                        <br>
+                        <a class="green">http://www.envato.com</a>
+                    </div>
+                </div>
+            </div>
+            <div class="span3 foot">
+                <h4>Recent Posts</h4>
+                <div class="tmargin20">
+                    <div class="recents">
+                        <p class="green"><a href="http://uouapps.com/funder/projects.html#">Lorem ipsus dolor sit amet</a></p>
+                        <p class="green"><a href="http://uouapps.com/funder/projects.html#">Proin nibh aufu suscript</a></p>
+                        <p class="green"><a href="http://uouapps.com/funder/projects.html#">Lorem ipsus dolor sit amet</a></p>
+                    </div>
+                    <p class="green recents"><a href="http://uouapps.com/funder/projects.html#">LQuri wfcw ertvc</a></p>
+                </div>
+            </div>
+            <div class="span3 foot">
+                <h4>Flickr Feed</h4>
+                <div class="flckr">
+                    <div>
+                        <div class="flickr"></div>
+                        <div class="flickr"></div>
+                        <div class="flickr"></div>
+                        <div class="flickrl"></div>
+
+                        <div class="flickr"></div>
+                        <div class="flickr"></div>
+                        <div class="flickr"></div>
+                        <div class="flickrl"></div>
+
+                        <div class="flickr"></div>
+                        <div class="flickr"></div>
+                        <div class="flickr"></div>
+                        <div class="flickrl"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer_bot">
+        <div class="footer_bott">
+            <div class="fleft">© AVNET TOUCH 2014</div>
+            <div class="fright">
+                <ul id="social_b" class="socialbott inline">
+					<li><a href="https://www.facebook.com/" target="_blank" original-title="twitter"><img src="images/social/icon_header_face.png" alt=""></a></li>
+					<li><a href="https://plus.google.com/" target="_blank" original-title="googleplus"><img src="images/social/icon_header_g.png" alt=""></a></li>
+					<li><a href="https://twitter.com/" title="facebook" target="_blank"><img src="images/social/icon_header_tw.png" alt=""></a></li>
+					<li><a href="http://www.linkedin.com/" target="_blank" original-title="linkedin"><img src="images/social/icon_header_in.png" alt=""></a></li>
+					<li><a href="http://uouapps.com/funder/johndoe@domainname.com" target="_self" original-title="mail"><img src="images/social/icon_header_p.png" alt=""></a></li>
+					<li><a href="http://uouapps.com/funder/johndoe@domainname.com" target="_self" original-title="mail"><img src="images/social/icon_header_ball.png" alt=""></a></li>
+				</ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+
+<!--[if IE 8]>
+<script src="js/css3-mediaqueries.js"></script>
+<![endif]-->
+
+
+</body></html>
